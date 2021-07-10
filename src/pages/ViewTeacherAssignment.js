@@ -2,6 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { getStudents } from '../api';
 import { Link } from 'react-router-dom';
+import {Table, Container} from 'react-bootstrap';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core';
+import LeftDrawer from "../components/LeftDrawer";
 
 export default function ViewTeacherAssignment(props) {
 
@@ -14,7 +18,7 @@ export default function ViewTeacherAssignment(props) {
         setData(data);
         console.log("array: ", data);
       };
-    
+
 
     useEffect(() => {
         getAllStudents();
@@ -24,12 +28,38 @@ export default function ViewTeacherAssignment(props) {
 
 
     return (
+      <div>
         <div>
-            {data.map((Student, i) => (
-            <Link key={i} to={`/TeacherForm/${Student.id}/${assignmentName}`}>
-                <h1 >{Student.name}</h1>
-            </Link>
-            ))}   
+          <LeftDrawer />
         </div>
-    )
+
+        <Container
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <Table style={{maxWidth: "800px"}} striped bordered hover variant="dark">
+                <tr>
+                  <th>#</th>    
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Assignment</th>
+                </tr>
+
+          {data.map((Student, i) => (
+              <tr>
+                  <td>{i}</td>
+                  <td>{Student.name}</td>
+                  <td>Status</td>
+                  <td>
+                    <Link key={i} to={`/TeacherForm/${Student.id}/${assignmentName}`}>
+                      Click Here
+                    </Link>
+                  </td>
+                </tr>
+          ))}  
+          </Table>
+        </Container>
+    </div>
+          
+  )
 }

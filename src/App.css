@@ -1,10 +1,5 @@
 .App {
-  
-  background: url(./images/logo.png), radial-gradient(circle, rgba(138,26,254,1) 11%, rgba(92,3,189,1) 57%), rgb(138,26,254);
-  background-repeat: no-repeat;
-  background-size: 5%, 100%, 100%;
-  background-position-x: 1cm, 0cm, 0cm;
-  background-position-y: 1cm, 0cm, 0cm;
+  background:  rgb(138,26,254);
 }
 
 .App-link {
