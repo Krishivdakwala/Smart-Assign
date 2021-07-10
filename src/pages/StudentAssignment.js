@@ -6,7 +6,7 @@ import { getAssignments, createAssignment } from '../api';
 import { Link } from "react-router-dom";
 import LeftDrawer from "../components/LeftDrawer";
 import { Container, Card, Button } from "react-bootstrap";
-import './TeacherAssignment.css';
+import './StudentAssignment.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +48,7 @@ export default function TeacherAssignments() {
 
           <Container
             className="d-flex flex-wrap align-items-center justify-content-center"
-            style={{ minHeight: "100vh"}}
+            style={{ minHeight: "85vh"}}
           >
             {data.map((assi, i) => (
                 

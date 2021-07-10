@@ -48,7 +48,7 @@ export default function TeacherAssignments() {
 
           <Container
             className="d-flex flex-wrap align-items-center justify-content-center"
-            style={{ minHeight: "100vh"}}
+            style={{ minHeight: "85vh"}}
           >
             {data.map((assi, i) => (
                 

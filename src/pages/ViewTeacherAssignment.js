@@ -35,7 +35,7 @@ export default function ViewTeacherAssignment(props) {
 
         <Container
           className="d-flex align-items-center justify-content-center"
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "85vh" }}
         >
           <Table style={{maxWidth: "800px"}} striped bordered hover variant="dark">
                 <tr>

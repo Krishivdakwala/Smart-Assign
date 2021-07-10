@@ -1,0 +1,25 @@
+.assn2{
+    box-sizing: border-box;
+    background-color: #E1E5EA;
+    border-radius: 10px;
+    padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    margin: 1cm;
+    width: 1000px;
+    height: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 150%;
+    
+    /* padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+    padding-left: 0.3cm;
+    padding-right: 0.3cm; */
+}
+
+.assn2text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

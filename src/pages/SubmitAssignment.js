@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from "../contexts/AuthContext";
 import { uploadFile, getAssignmentData } from "../api";
+import LeftDrawer from "../components/LeftDrawer";
+import { Container, Card, Button } from "react-bootstrap";
+import './SubmitAssignment.css';
 
 export default function SubmitAssignment(props) {
     const { currentUser, logout } = useAuth();
@@ -35,20 +38,42 @@ export default function SubmitAssignment(props) {
 
     return (
         <div>
-          <h1>{assignmentName}</h1>
-          <h2>{data.subject}</h2>
-          <h2>{data.due_date}</h2>
-          <h2>{data.questions}</h2>
           <div>
-              <label className="btn btn-secondary">
-                <input
-                  type="file"
-                  onChange={handleFile}
-                  name="photo1"
-                  accept=".pdf,image/*"
-                ></input>
-              </label>
-            </div>  
+            <LeftDrawer />
+          </div>
+
+          <Container
+            className="d-flex flex-wrap text-wrap align-items-center justify-content-center"
+            style={{ minHeight: "85vh"}}
+          >
+            <Card className="styles.assn2" bsPrefix="assn">
+              <Card.Body>
+                <Card.Text className="styles.assn2text" bsPrefix="assn2text">
+                  Subject: {data.subject}
+                </Card.Text>
+                <Card.Text className="styles.assn2text" bsPrefix="assn2text">
+                  Assignment: {assignmentName}
+                </Card.Text>
+                <Card.Text className="styles.assn2text" bsPrefix="assn2text">
+                  Due Date: {data.due_date}
+                </Card.Text>
+                <Card.Text className="styles.assn2text" bsPrefix="assn2text">
+                  Question: {data.questions}
+                </Card.Text>
+                <div>
+                  <label className="btn btn-secondary">
+                    <input
+                      type="file"
+                      onChange={handleFile}
+                      name="photo1"
+                      accept=".pdf,image/*"
+                    ></input>
+                  </label>
+                </div> 
+                <Button href="/studentassignments">Submit Assignment</Button>
+                </Card.Body>
+              </Card>
+          </Container>
         </div>
     )
 }
