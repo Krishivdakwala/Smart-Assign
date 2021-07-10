@@ -26,12 +26,7 @@ export default function Dashboard() {
     }
   }
 
-  const handleFile = (event) => {
-    let value;
-    value = event.target.files[0];
 
-    uploadFile({ file: value, email: currentUser.email, assignment: "assiXd" });
-  };
 
   useEffect(() => {
     getStudentData(currentUser.email);
@@ -49,16 +44,7 @@ export default function Dashboard() {
         >
           <div className="w-100" style={{ maxWidth: "400px" }}>
             {/* files */}
-            <div>
-              <label className="btn btn-secondary">
-                <input
-                  type="file"
-                  onChange={handleFile}
-                  name="photo1"
-                  accept=".pdf,image/*"
-                ></input>
-              </label>
-            </div>
+            
             {/* files */}
           </div>
         </Container>
