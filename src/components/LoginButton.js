@@ -6,34 +6,50 @@ import Box from '@material-ui/core/Box';
 import { Link } from 'react-router-dom';
 
 const buttonStyles = makeStyles({
-    root: {
-        background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
+  loginbut: {
+        background: 'linear-gradient(45deg, #0A1931, #0A1931)',
         border: 0,
-        borderRadius: 15,
+        borderRadius: "25px",
         color: 'White',
         padding: '15px 60px',
-        margin: '20px'
+        margin: '20px',
+    },
+
+    signupbut:{
+      background: 'transparent',
+      border: 0,
+      borderRadius: "25px",
+      color: 'White',
+      padding: '15px 60px',
+      margin: '20px',
+    },
+
+
+    twobuttons: {
+      position: "absolute",
+      left: "6cm",
+      top: "15cm",
     }
 })
 
 function LoginButton() {
-    const classes = buttonStyles();
-    return (
-      <div> 
-      <Box display="flex" justifyContent="space-between">
-        <Link to="/login" >
-         <Fab className={classes.root} size="large">
-          Login
-        </Fab>
-        </Link>
-        <Link to="/signup">
-        <Fab className={classes.root}>
-          Signup
-        </Fab>
-        </Link>
-        </Box>
-      </div>
-    );
-  }
+  const classes = buttonStyles();
+  return (
+    <div className={classes.twobuttons}> 
+    <Box display="flex">
+      <Link to="/login" >
+       <Fab className={classes.loginbut} size="large">
+        Login
+      </Fab>
+      </Link>
+      <Link to="/signup">
+      <Fab className={classes.signupbut}>
+        Signup
+      </Fab>
+      </Link> 
+      </Box>
+    </div>
+  );
+}
 
 export default LoginButton;
