@@ -65,7 +65,21 @@ function LeftDrawer() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const [studentData, setStudentData] = useState({});
 
+  const getStudent = () => {
+    getStudentData(currentUser.email)
+      .then((data) => {
+        setStudentData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getStudent();
+  }, []);
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };

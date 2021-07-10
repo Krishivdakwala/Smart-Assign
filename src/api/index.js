@@ -24,7 +24,7 @@ export const getStudentData = async (email) => {
   );
 };
 
-export const createUser = ({ UID, name }) => {
+export const createUser = ({ UID, name, teacherCheck }) => {
   console.log(UID);
   firestoreInstance
     .collection("students")
@@ -32,6 +32,7 @@ export const createUser = ({ UID, name }) => {
     .set({
       name: name,
       points: 0,
+      teacherCheck: teacherCheck,
       assignments: [
         {
           name: "empty",

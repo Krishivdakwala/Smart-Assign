@@ -14,6 +14,8 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const[teacherCheck, setTeacherCheck] = useState("");
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -28,7 +30,8 @@ export default function Signup() {
       await signup(
         nameRef.current.value,
         emailRef.current.value,
-        passwordRef.current.value
+        passwordRef.current.value,
+        teacherCheck
       );
 
       history.push("/dashboard");
@@ -71,6 +74,16 @@ export default function Signup() {
                     ref={passwordConfirmRef}
                     required
                   />
+                </Form.Group>
+                <Form.Group>
+                <div key={`default-checkbox`} className="mb-3">
+                  <Form.Check 
+                    type={'checkbox'}
+                    id={`default-checkbox`}
+                    label={`Check this if you are a teacher`}
+                    onChange={(e)=>setTeacherCheck(e.target.checked)}
+                  />
+                </div>
                 </Form.Group>
                 <Button disabled={loading} className="w-100" type="submit">
                   Sign Up
