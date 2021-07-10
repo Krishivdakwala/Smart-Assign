@@ -15,6 +15,8 @@ import LeftDrawer from "./components/LeftDrawer";
 import TeacherForm from "./components/TeacherForm";
 import TeacherAssignments from "./pages/TeacherAssignment";
 import CreateAssignmentScreen from "./pages/CreateAssignment";
+import StudentAssignments from "./pages/StudentAssignment";
+import ViewTeacherAssignment from "./pages/ViewTeacherAssignment";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
                 path="/createAssignment"
                 component={CreateAssignmentScreen}
               />
+              <Route path="/ViewTeacherAssignment/:assignmentName" component={ViewTeacherAssignment} />
+              <Route path="/studentAssignments" component={StudentAssignments} />
               <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>

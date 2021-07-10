@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function TeacherAssignments() {
+export default function StudentAssignments() {
     const classes = useStyles();
     const [data, setData] = useState([]);
 
@@ -35,15 +35,9 @@ export default function TeacherAssignments() {
     return (
         <div>
          {data.map((assi, i) => (
-             <Link key={i} to={`/ViewTeacherAssignment/${assi.name}`}>
-              <h1 >{assi.name}</h1>
-             </Link>
+             <h1 key={i}>{assi.name}</h1>
          ))}   
-            <div className={classes.root}>
-                <Fab color="primary" href="/createAssignment" aria-label="add">
-                <AddIcon />
-                </Fab>
-            </div>
+
             
         </div>
     )
