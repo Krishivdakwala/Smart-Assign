@@ -17,6 +17,7 @@ import CreateAssignmentScreen from "./pages/CreateAssignment";
 import StudentAssignments from "./pages/StudentAssignment";
 import ViewTeacherAssignment from "./pages/ViewTeacherAssignment";
 import SubmitAssignment from "./pages/SubmitAssignment";
+import calendar from './pages/Calendar';
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
               <Route path="/studentAssignments" component={StudentAssignments} />
               <Route path="/submitAssignment/:assignmentName" component={SubmitAssignment} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/calendar" component={calendar}/>
+
             </Switch>
           </AuthProvider>
         </div>

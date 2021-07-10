@@ -114,7 +114,7 @@ function LeftDrawer() {
             <Nav.Link href="#assignments">Assignments</Nav.Link>
             <Nav.Link href="#notebook">Notebook</Nav.Link>
             <Nav.Link href="#people">People</Nav.Link>
-            <Nav.Link href="#calendar">Calendar</Nav.Link>
+            <Nav.Link href="/calendar">Calendar</Nav.Link>
             </Nav>
             <IconButton
                 aria-label="account of current user"
