@@ -1,0 +1,31 @@
+.assn{
+    box-sizing: border-box;
+    background-color: #E1E5EA;
+    border-radius: 10px;
+    padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    margin: 1cm;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    /* padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+    padding-left: 0.3cm;
+    padding-right: 0.3cm; */
+}
+
+.assntext{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.add_btn{
+    position: '-webkit-sticky';
+    position: 'sticky';
+    left: '900px';
+    top: '900px';
+}

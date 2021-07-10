@@ -6,6 +6,9 @@ import { Container } from "react-bootstrap";
 import { createUser } from "../api";
 import DiscreteSlider from "./Slider";
 import { upDateStudentPoints, getAssignments, createAssignment } from "../api";
+import './TeacherForm.css';
+import LeftDrawer from "./LeftDrawer";
+
 
 export default function TeacherForm(props) {
 
@@ -49,13 +52,17 @@ export default function TeacherForm(props) {
 
   return (
     <>
+      <div>
+        <LeftDrawer />
+      </div>
+
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
       
         <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Card>
+          <Card className="styles.card_teacher" bsPrefix="card_teacher">
             <Card.Body>
               <h2 className="text-center mb-4">Assignment Score</h2>
               {error && <Alert variant="danger">{error}</Alert>}
@@ -66,8 +73,8 @@ export default function TeacherForm(props) {
                     handleSlider={handleSliders("timePoints")}
                   />
                   <h2>{JSON.stringify(timePoints)}</h2>
-                  <h2>{studentName}</h2>
-                  <h2>{assiName}</h2>
+                  {/* <h2>{studentName}</h2>
+                  <h2>{assiName}</h2> */}
                 </Form.Group>
 
                 <Form.Group id="neatnessPoints">
@@ -84,7 +91,7 @@ export default function TeacherForm(props) {
                     handleSlider={handleSliders("correctPoints")}
                   />
                   <h2>{JSON.stringify(correctPoints)}</h2>
-                  <h2>{JSON.stringify(points)}</h2>
+                  {/* <h2>{JSON.stringify(points)}</h2> */}
                 </Form.Group>
 
                 <Form.Group>
