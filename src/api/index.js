@@ -93,7 +93,7 @@ export const upDateStudentPoints = async ({ email, points }) => {
   );
 };
 
-export const createAssignment = ({ name, subject, due_date }) => {
+export const createAssignment = ({ name, subject, due_date, questions }) => {
   console.log(name);
   firestoreInstance
     .collection("Assignments")
@@ -102,6 +102,7 @@ export const createAssignment = ({ name, subject, due_date }) => {
       name: name,
       subject: subject,
       due_date: due_date,
+      questions: questions,
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
@@ -153,4 +154,3 @@ export const getAssignments = async () => {
       console.log("Error getting documents: ", error);
     });
 };
-
