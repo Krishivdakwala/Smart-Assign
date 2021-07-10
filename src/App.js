@@ -35,7 +35,10 @@ function App() {
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+
+              {/* studentName = studentEmail */}
               <Route path="/teacherForm/:studentName/:assignmentName" component={TeacherForm} />
+              
               <Route
                 path="/teacherAssignments"
                 component={TeacherAssignments}

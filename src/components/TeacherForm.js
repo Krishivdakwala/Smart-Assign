@@ -24,6 +24,7 @@ export default function TeacherForm(props) {
 
   useEffect(() => {
     const assigName = props.match.params.assignmentName;
+    // studentName =  studentEmail
     const studName = props.match.params.studentName;
     setStudentName(studName);
     setAssiName(assigName);

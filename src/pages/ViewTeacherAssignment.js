@@ -26,7 +26,7 @@ export default function ViewTeacherAssignment(props) {
     return (
         <div>
             {data.map((Student, i) => (
-            <Link key={i} to={`/TeacherForm/${Student.name}/${assignmentName}`}>
+            <Link key={i} to={`/TeacherForm/${Student.id}/${assignmentName}`}>
                 <h1 >{Student.name}</h1>
             </Link>
             ))}   
