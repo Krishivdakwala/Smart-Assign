@@ -5,11 +5,13 @@ import LoginButton from '../components/LoginButton';
 import NavComponent from '../components/NavComponent';
 import './Landing.css';
 import Slide from 'react-reveal/Slide';
+import { Card } from "react-bootstrap";
 
 function Landing() {
     return (
       <div>
       <div className = "Header">
+      <Card className = "styles.logo_frame" bsPrefix="logo_frame" >
 
 
         <Fade top>
@@ -24,6 +26,8 @@ function Landing() {
         <Fade bottom>
           <LoginButton />
         </Fade>
+        </Card>
+
 
         
       </div>

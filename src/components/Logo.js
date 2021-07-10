@@ -7,8 +7,8 @@ function Logo() {
     return (
       <div>
       <CustomColor>
-        <h1>Smart Assign</h1>
-        <h5>Where students enjoy assignments</h5>
+      <h1 style={{fontSize: "50px"}}>SMART ASSIGN</h1>   
+      <h5>Where students enjoy assignments</h5>
         </CustomColor>
       </div>
     );
