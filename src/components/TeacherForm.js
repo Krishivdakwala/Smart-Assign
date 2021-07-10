@@ -5,7 +5,12 @@ import { Link, useHistory } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { createUser } from "../api";
 import DiscreteSlider from "./Slider";
-import { upDateStudentPoints, getAssignments, createAssignment } from "../api";
+import {
+  upDateStudentPoints,
+  getAssignments,
+  createAssignment,
+  getFile,
+} from "../api";
 import "./TeacherForm.css";
 import LeftDrawer from "./LeftDrawer";
 import PDFView from "./pdfView";
@@ -18,6 +23,7 @@ export default function TeacherForm(props) {
 
   const [studentName, setStudentName] = useState("");
   const [assiName, setAssiName] = useState("");
+  const [pdfURL, setPdfURL] = useState("");
 
   const [points, setPoints] = useState({
     timePoints: 0,
@@ -25,12 +31,19 @@ export default function TeacherForm(props) {
     neatPoints: 0,
   });
 
+  const getFileURL = async ({ studname, assigname }) => {
+    let url = await getFile({ email: studname, assiName: assigname });
+    console.log("url in teacher form", url);
+    setPdfURL(url);
+  };
+
   useEffect(() => {
     const assigName = props.match.params.assignmentName;
     // studentName =  studentEmail
     const studName = props.match.params.studentName;
     setStudentName(studName);
     setAssiName(assigName);
+    getFileURL({ studname: studName, assigname: assigName });
   }, []);
 
   async function handleSubmit(e) {
@@ -68,7 +81,7 @@ export default function TeacherForm(props) {
               maxWidth: "1000px",
             }}
           >
-            <PDFView />
+            <PDFView url={pdfURL} />
           </div>
 
           <div className="w-100" style={{ maxWidth: "1000px" }}>
