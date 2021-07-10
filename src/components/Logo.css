@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+.wow{   
+    position: absolute;
+    left: 5cm;
+    top: 5cm;
+    color: #ffffff;
+    font-size: 170px;
+    font-family: 'Passion One';   
+    letter-spacing: 1px;
+    word-spacing: 0.6px;
+    line-height: 3.5cm;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.describe{
+    position: absolute;
+    color: #ffffff;
+    font-family: 'Comfortaa', cursive;
+    left: 7cm;
+    top: 12.5cm;
+    font-size: 22px;
+}
+
+hr{
+    height: 0.8px;
+    padding-bottom: 0.06%;
+    margin: 0%;
+    background: #24a7ff;
+    width: 2.5cm;
+    position: absolute;
+    top: 12.45cm;
+    left: 18.5cm;
+}

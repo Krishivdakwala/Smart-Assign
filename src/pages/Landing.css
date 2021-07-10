@@ -1,25 +1,33 @@
+.bgheader {
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: top;
+  background: url(../images/logo.png), url(../images/bg.png), radial-gradient(circle, rgba(138,26,254,1) 11%, rgba(92,3,189,1) 57%), rgb(138,26,254);
+  background-repeat: no-repeat;
+  background-size: 5%, 35%, 100%, 100%;
+  background-position-x: 1cm, 23cm, 0, 0;
+  background-position-y: 1cm, 1cm, 0, 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(30px + 2vmin);
+  text-align: center;
+}
 
-.Header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(30px + 2vmin);
-    text-align: center;
-  }
+.mainDiv{
+  display: inline;
+}
 
-
-
-.AboutUsPara{
+/* .AboutUsPara{
     color: #ffffff;
     text-align: left;
     padding-left: 80px;
     padding-bottom: 50px;
     font-size: large;
     background-color: #282c34;
-  }
+  } */
 
 /* .logo_frame{
     background-color: #17191f;
