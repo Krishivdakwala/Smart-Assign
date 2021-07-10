@@ -1,0 +1,22 @@
+
+.Header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(30px + 2vmin);
+    text-align: center;
+  }
+
+
+
+.AboutUsPara{
+    color: #ffffff;
+    text-align: left;
+    padding-left: 80px;
+    padding-bottom: 50px;
+    font-size: large;
+    background-color: #282c34;
+  }
