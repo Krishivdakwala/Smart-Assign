@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { getAssignments, createAssignment } from '../api';
+import { getAssignments } from '../api';
 import { Link } from "react-router-dom";
 import LeftDrawer from "../components/LeftDrawer";
 import { Container, Card, Button } from "react-bootstrap";
@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(1),
     },
     add_btn: {
-      position: 'sticky',
-      bottom: '400px',
-      right: '500px',
+      position: 'fixed',
+      top: '670px',
+      left: '1240px',
     },
   }));
 
@@ -73,7 +73,7 @@ export default function TeacherAssignments() {
               </Card>
             ))}   
                <div className={classes.root}>
-                   <Fab color="primary" href="/createAssignment" aria-label="add">
+                   <Fab color="primary" className={classes.add_btn} href="/createAssignment" aria-label="add">
                    <AddIcon />
                    </Fab>
                </div>

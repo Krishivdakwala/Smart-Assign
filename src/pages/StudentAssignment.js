@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function TeacherAssignments() {
+export default function StudentAssignments() {
     const classes = useStyles();
     const [data, setData] = useState([]);
 

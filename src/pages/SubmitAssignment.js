@@ -46,7 +46,7 @@ export default function SubmitAssignment(props) {
             className="d-flex flex-wrap text-wrap align-items-center justify-content-center"
             style={{ minHeight: "85vh"}}
           >
-            <Card className="styles.assn2" bsPrefix="assn">
+            <Card className="styles.assn2" bsPrefix="assn2">
               <Card.Body>
                 <Card.Text className="styles.assn2text" bsPrefix="assn2text">
                   Subject: {data.subject}

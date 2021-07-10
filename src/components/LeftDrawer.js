@@ -5,19 +5,17 @@ import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import IconButton from '@material-ui/core/IconButton';
 import { getStudentData } from "../api";
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import { useAuth } from "../contexts/AuthContext"
-import { useHistory } from "react-router-dom"
-import { Link } from 'react-router-dom';
-import { TrophyFill, Calendar2WeekFill } from 'react-bootstrap-icons';
+import { useAuth } from "../contexts/AuthContext";
+import { useHistory, Link } from "react-router-dom";
+import { Trophy, TrophyFill, Calendar2WeekFill } from 'react-bootstrap-icons';
 
 const drawerWidth = 180;
 
@@ -161,33 +159,33 @@ function LeftDrawer() {
       >
         <Toolbar />
         <div className={classes.drawerContainer}>
-          <Divider />
+     
           <List>
               <ListItem className={classes.listItem}>
                 <Calendar2WeekFill />
                 <ListItemText primary="&ensp;Time Table"/>
               </ListItem>
-              <Divider />
+
               <ListItem className={classes.listItem}>
                 <ListItemText primary="&ensp;SST" secondary="9:00 AM - 10:00 AM" />
               </ListItem>
-              <Divider />
+          
               <ListItem className={classes.listItem}>
                 <ListItemText primary="&ensp;Science" secondary="10:00 AM - 11:00 AM" />
               </ListItem>
-              <Divider />
+            
               <ListItem className={classes.listItem}>
                 <ListItemText primary="&ensp;Break" secondary="11:00 AM - 12:00 PM" />
               </ListItem>
-              <Divider />
+          
               <ListItem className={classes.listItem}>
                 <ListItemText primary="&ensp;Music" secondary="12:00 PM - 01:00 PM" />
               </ListItem>
-              <Divider />
+           
               <ListItem className={classes.listItem}>
                 <ListItemText primary="&ensp;Maths" secondary="01:00 PM - 02:00 PM" />
               </ListItem>
-              <Divider /> 
+         
           </List>
         </div>
       </Drawer>
@@ -202,16 +200,27 @@ function LeftDrawer() {
       >
         <Toolbar />
         <div className={classes.drawerContainer}>
-          <Divider />
+        
           <List>
               <ListItem className={classes.listItem}>
-                <TrophyFill />
+                <Trophy />
                 <ListItemText primary="&ensp;Leaderboards"/>
               </ListItem>
-              <Divider />
+          
+              <ListItem>
+                <TrophyFill style={{color: "#ffd700"}}/>
+                <ListItemText primary="&ensp;1. Soham" />
+              </ListItem>
 
+              <ListItem>
+                <TrophyFill style={{color: "#c0c0c0"}}/>
+                <ListItemText primary="&ensp;2. Sanchit" />
+              </ListItem>
 
-
+              <ListItem>
+                <TrophyFill style={{color: "#cd7f32"}}/>
+                <ListItemText primary="&ensp;3. Vishu" />
+              </ListItem>
 
           </List>
         </div>
