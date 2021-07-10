@@ -80,10 +80,23 @@ export const getFile = ({ email, assiName }) => {
     });
 };
 
-export const upDateStudentPoints = async ({ email, points }) => {
+export const upDateStudentPoints = async ({
+  email,
+  points,
+  remark,
+  assiName,
+}) => {
   let data = await getStudentData(email);
+  let assiArray = data.assignments;
 
-  console.log("pls work: ", data);
+  assiArray.push({
+    name: assiName,
+    score: points,
+    remark: remark,
+  });
+
+  console.log("pls work: ", assiArray);
+  console.log("terageted student: ", email);
 
   return (
     firestoreInstance
@@ -93,13 +106,7 @@ export const upDateStudentPoints = async ({ email, points }) => {
       .set({
         name: data.name,
         points: (data.points ? data.points : 0) + points,
-        assignments: [
-          {
-            name: "empty",
-            score: 0,
-            remark: "lmao git gud xDDDzz",
-          },
-        ],
+        assignments: assiArray,
         id: email,
       })
       .then(() => {

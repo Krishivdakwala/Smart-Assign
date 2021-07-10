@@ -49,8 +49,10 @@ export default function TeacherForm(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     upDateStudentPoints({
-      email: currentUser.email,
+      email: studentName,
       points: timePoints + correctPoints + neatPoints,
+      remark: remarkRef.current.value,
+      assiName: assiName,
     });
   }
 
