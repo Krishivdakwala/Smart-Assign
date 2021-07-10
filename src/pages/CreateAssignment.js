@@ -31,12 +31,12 @@ export default function CreateAssignmentScreen() {
       >
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group>
               <Form.Label>Assignment Name</Form.Label>
               <Form.Control type="text" placeholder="Name" ref={nameRef} />
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group>
               <Form.Label>Subject</Form.Label>
               <Form.Control
                 type="text"
@@ -45,12 +45,12 @@ export default function CreateAssignmentScreen() {
               />
             </Form.Group>
 
-            <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Group>
               <Form.Label>Questions</Form.Label>
               <Form.Control as="textarea" rows={5} ref={questionsRef} />
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group>
               <Form.Label>Due Date</Form.Label>
               <Form.Control type="date" placeholder="Due Date" ref={dateRef} />
             </Form.Group>

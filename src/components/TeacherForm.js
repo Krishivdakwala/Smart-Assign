@@ -9,6 +9,7 @@ import { upDateStudentPoints, getAssignments, createAssignment } from "../api";
 
 export default function TeacherForm(props) {
 
+  const remarkRef = useRef();
   const { currentUser, signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -84,6 +85,11 @@ export default function TeacherForm(props) {
                   />
                   <h2>{JSON.stringify(correctPoints)}</h2>
                   <h2>{JSON.stringify(points)}</h2>
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Remarks</Form.Label>
+                  <Form.Control as="textarea" rows={3} ref={remarkRef} />
                 </Form.Group>
 
                 <Button
