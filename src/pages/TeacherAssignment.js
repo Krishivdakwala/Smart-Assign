@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { getAssignments, createAssignment } from '../api';
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +38,7 @@ export default function TeacherAssignments() {
              <h1 key={i}>{assi.name}</h1>
          ))}   
             <div className={classes.root}>
-                <Fab color="primary" aria-label="add">
+                <Fab color="primary" href="/createAssignment" aria-label="add">
                 <AddIcon />
                 </Fab>
             </div>

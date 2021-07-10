@@ -2,12 +2,14 @@ import React, { useRef } from "react";
 import { Button, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { createAssignment } from "../api";
+import { Link, useHistory } from "react-router-dom";
 
 export default function CreateAssignmentScreen() {
   const nameRef = useRef();
   const subjectRef = useRef();
   const questionsRef = useRef();
   const dateRef = useRef();
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +20,7 @@ export default function CreateAssignmentScreen() {
       due_date: dateRef.current.value,
       questions: questionsRef.current.value,
     });
+    history.push("/TeacherAssignments");
   }
 
   return (
