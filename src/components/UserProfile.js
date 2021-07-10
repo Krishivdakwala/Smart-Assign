@@ -30,7 +30,7 @@ export default function UserProfile() {
 
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "85vh" }}
       >
         <Card>
             <Card.Body>

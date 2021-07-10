@@ -70,7 +70,7 @@ export default function TeacherForm(props) {
 
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "85vh" }}
       >
         <div className="row">
           <div

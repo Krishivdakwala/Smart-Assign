@@ -33,7 +33,7 @@ export default function CreateAssignmentScreen() {
 
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "85vh" }}
       >
         <div className="w-100" style={{ maxWidth: "400px" }}>
         <Card className="styles.createCard" bsPrefix="createCard">
