@@ -35,7 +35,7 @@ function App() {
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
-              <Route path="/teacherForm" component={TeacherForm} />
+              <Route path="/teacherForm/:studentName/:assignmentName" component={TeacherForm} />
               <Route
                 path="/teacherAssignments"
                 component={TeacherAssignments}

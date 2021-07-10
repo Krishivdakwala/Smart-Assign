@@ -7,18 +7,14 @@ import { createUser } from "../api";
 import DiscreteSlider from "./Slider";
 import { upDateStudentPoints, getAssignments, createAssignment } from "../api";
 
-export default function TeacherForm() {
-  const emailRef = useRef();
-  const nameRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+export default function TeacherForm(props) {
+
   const { currentUser, signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
-  const timePointsRef = useRef();
-  const neatnessRef = useRef();
-  const correctnessRef = useRef();
+
+  const [studentName, setStudentName] = useState("");
+  const [assiName, setAssiName] = useState("");
 
   const [points, setPoints] = useState({
     timePoints: 0,
@@ -27,12 +23,10 @@ export default function TeacherForm() {
   });
 
   useEffect(() => {
-    //getAllAssignments();
-    // createAssignment({
-    //   name: "dhok dhok",
-    //   subject: "javascript",
-    //   due_date: "07-07-2021",
-    // });
+    const assigName = props.match.params.assignmentName;
+    const studName = props.match.params.studentName;
+    setStudentName(studName);
+    setAssiName(assigName);
   }, []);
 
   async function handleSubmit(e) {
@@ -57,6 +51,7 @@ export default function TeacherForm() {
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
+      
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
@@ -69,6 +64,8 @@ export default function TeacherForm() {
                     handleSlider={handleSliders("timePoints")}
                   />
                   <h2>{JSON.stringify(timePoints)}</h2>
+                  <h2>{studentName}</h2>
+                  <h2>{assiName}</h2>
                 </Form.Group>
 
                 <Form.Group id="neatnessPoints">
