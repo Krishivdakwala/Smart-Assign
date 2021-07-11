@@ -17,6 +17,7 @@ import PDFView from "./pdfView";
 
 export default function TeacherForm(props) {
   const remarkRef = useRef();
+  const history = useHistory();
   const { currentUser, signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -54,6 +55,7 @@ export default function TeacherForm(props) {
       remark: remarkRef.current.value,
       assiName: assiName,
     });
+    history.push("/TeacherAssignments");
   }
 
   const { timePoints, correctPoints, neatPoints } = points;
