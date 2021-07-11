@@ -40,14 +40,15 @@ React is a free and open-source front-end JavaScript library for building user i
 
 
 
-
-
 ## React App Documentation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+This will install all the necessary libraries.
 
 ### `npm start`
 
