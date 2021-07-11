@@ -10,6 +10,8 @@
 
 SmartAssign is a React-Based Website, which attempts to solve these issues. (Not deployed)
 
+Video and Presentation: [Drive](https://drive.google.com/drive/folders/1OxyL9UoOQ_58m4KcC2KCGnydiJnSiDzU?usp=sharing)
+
 
 ## Project Componenents
 
