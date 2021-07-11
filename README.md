@@ -1,3 +1,42 @@
+# SmartAssign
+
+## Description
+
+- The pandemic has prompted the use of online learning platforms like Google Classroom and Microsoft Teams.
+
+- However convenient these applications might be, they are not student-friendly, particularly for primary school students.
+
+- With the increasing importance for e-learning platforms, a cheerful online class is the need of the hour.
+
+SmartAssign is a React-Based Website, which attempts to solve these issues. (Not deployed)
+
+
+## Project Componenents
+
+### Front-End
+
+
+## Tech-Stack Used
+
+## NodeJs
+
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment.
+
+## ReactJs
+
+React is a free and open-source front-end JavaScript library for building user interfaces or UI components.The front end of out website is 
+
+## Firebase
+
+[Firebase](https://firebase.google.com/) has been used for Database management.
+
+[Firebase Authentication](https://firebase.google.com/products/auth/) takes care of getting your users logged in and identified. This product is essential to getting some of the other products configured properly, especially if you need to restrict access to per-user data (which nearly every app will want to do).
+
+
+
+
+
+## React App Documentation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
