@@ -1,3 +1,7 @@
+//This page shows the students who have submitted the particular assignment selected
+//A teacher selects an assignment on TeacherAssignment page which redirects the page to this page
+
+
 import React from "react";
 import { useEffect, useState } from "react";
 import { getStudents } from "../api";

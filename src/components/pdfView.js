@@ -1,3 +1,7 @@
+//This component is used to view the pdf submitted by the students
+//Used by the teacher for grading the students' assignments
+
+
 import React from "react";
 import { Viewer } from "@react-pdf-viewer/core";
 import { Worker } from "@react-pdf-viewer/core";

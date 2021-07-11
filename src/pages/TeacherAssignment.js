@@ -1,3 +1,6 @@
+//TeacherAssignment.js page is for the teachers to view all the assignments that they have assigned
+//It has an option to add assignment
+
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';

@@ -1,3 +1,5 @@
+//This component is for the styling and functioning on the login button
+
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import Fab  from '@material-ui/core/Fab';

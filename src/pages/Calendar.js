@@ -1,3 +1,6 @@
+// Calendar.js return a page with calendar that is to be linked to /calendar
+
+
 import React from "react";
 import LeftDrawer from "../components/LeftDrawer";
 import { Container, Card } from "react-bootstrap";

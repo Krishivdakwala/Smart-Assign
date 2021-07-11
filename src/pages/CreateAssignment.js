@@ -1,3 +1,5 @@
+//CreateAssignment is used by a teacher to create a new assignment 
+
 import React, { useRef } from "react";
 import { Card, Button, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";

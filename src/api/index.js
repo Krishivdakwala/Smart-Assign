@@ -1,6 +1,10 @@
 import { firestoreInstance, fireStorage } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 
+/*
+  fetches specific student data according to email from firebase
+*/ 
+
 export const getStudentData = async (email) => {
   console.log("email", email);
   return (
@@ -24,6 +28,12 @@ export const getStudentData = async (email) => {
   );
 };
 
+/*
+  creates a new document in students collection 
+  takes name, points and  submitted assignments of
+  the student.
+  If it is a teacher, the teacherCheck flag is set to true
+*/
 export const createUser = ({ UID, name, teacherCheck }) => {
   console.log(UID);
   firestoreInstance
@@ -44,6 +54,11 @@ export const createUser = ({ UID, name, teacherCheck }) => {
     });
 };
 
+/*
+  function to upload pdf file to firebase storage 
+  directory according to student's email and assignmnt 
+*/
+
 export const uploadFile = ({ file, assignment, email }) => {
   let ref = fireStorage.ref(email + "/" + assignment + ".pdf");
 
@@ -57,6 +72,10 @@ export const uploadFile = ({ file, assignment, email }) => {
     });
 };
 
+/*
+  fetch file from firebase storage according to student email and assignment
+*/
+
 export const getFile = ({ email, assiName }) => {
   let ref = fireStorage.ref(`${email}/${assiName}.pdf`);
   //.child(`${email}/${assiName}.pdf`)
@@ -68,11 +87,15 @@ export const getFile = ({ email, assiName }) => {
       return url;
     })
     .catch((error) => {
-      // A full list of error codes is available at
-      // https://firebase.google.com/docs/storage/web/handle-errors
+      
       return "error";
     });
 };
+
+
+/*
+ *update student's total points and add checked assignments in the assignment array 
+ */
 
 export const upDateStudentPoints = async ({
   email,
@@ -112,6 +135,11 @@ export const upDateStudentPoints = async ({
   );
 };
 
+/*
+  create a new assignment by teacher
+  specify due_date, name, subject and questions
+*/
+
 export const createAssignment = ({ name, subject, due_date, questions }) => {
   console.log(name);
   firestoreInstance
@@ -131,20 +159,24 @@ export const createAssignment = ({ name, subject, due_date, questions }) => {
     });
 };
 
+/*
+  get details for a specific assignment
+  name, subject, due_date, questions
+*/
+
 export const getAssignmentData = async (Name) => {
   console.log("Name", Name);
   return (
     firestoreInstance
       .collection("Assignments")
       .doc(Name)
-      //.where("id", "==", email.toString())
       .get()
       .then((doc) => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
           return doc.data();
         } else {
-          // doc.data() will be undefined in this case
+        
           console.log("No such document!");
         }
       })
@@ -153,6 +185,10 @@ export const getAssignmentData = async (Name) => {
       })
   );
 };
+
+/*
+  get all assignments from the Assignments collection
+*/
 
 export const getAssignments = async () => {
   let arrayAssi = [];
@@ -174,6 +210,10 @@ export const getAssignments = async () => {
     });
 };
 
+/*
+  get all documents from student Collection
+ */
+
 export const getStudents = async () => {
   let arrayStudents = [];
 
@@ -194,6 +234,11 @@ export const getStudents = async () => {
     });
 };
 
+/*
+  get the top 3 students from students collection
+  according to points
+*/
+
 export const getTopPoints = async () => {
   let arrayStudents = [];
 
@@ -204,11 +249,10 @@ export const getTopPoints = async () => {
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        //console.log(doc.id, " => ", doc.data());
+        
         arrayStudents.push(doc.data());
       });
-      //console.log("arrayAssi: ", arrayAssi);
+      
       return arrayStudents;
     })
     .catch((error) => {

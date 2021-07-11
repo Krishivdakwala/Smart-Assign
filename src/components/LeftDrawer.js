@@ -1,3 +1,6 @@
+//This component includes the navbar, the left drawer and the leaderboard
+
+
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -120,9 +123,9 @@ function LeftDrawer() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Navbar className={classes.navBar} variant="dark">
-            <Navbar.Brand href="/dashboard">Luokossa</Navbar.Brand>
+            <Navbar.Brand href="/dashboard">Smart Assign</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#class">Class</Nav.Link>
+
               <Nav.Link
                 href={
                   studentData.teacherCheck
@@ -132,8 +135,7 @@ function LeftDrawer() {
               >
                 Assignments
               </Nav.Link>
-              <Nav.Link href="#notebook">Notebook</Nav.Link>
-              <Nav.Link href="#people">People</Nav.Link>
+
               <Nav.Link href="/calendar">Calendar</Nav.Link>
             </Nav>
             <IconButton

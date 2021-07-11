@@ -1,3 +1,6 @@
+//Login.js is the login page for the user
+//Here the user uses emailId and password to log into his/her account
+
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";

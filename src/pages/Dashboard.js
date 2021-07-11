@@ -1,3 +1,7 @@
+//Dashboard.js page is the starting page for a student or teacher after login
+//All features can be accessed from the dashboard
+
+
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";

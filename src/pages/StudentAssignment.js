@@ -1,3 +1,6 @@
+//StudentASsignment.js page shows all the assignments that are assigned to the students
+
+
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';

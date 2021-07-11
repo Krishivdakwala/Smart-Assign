@@ -1,3 +1,5 @@
+//Signup.js is use to create a new user on the website
+
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";

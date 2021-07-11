@@ -1,3 +1,7 @@
+//This component returns the slider which is used on TeacherForm page
+//Used for grading students
+
+
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";

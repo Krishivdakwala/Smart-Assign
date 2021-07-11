@@ -1,3 +1,6 @@
+//This component contains the styled logo for the website
+
+
 import React from 'react'
 import { Box, makeStyles, withStyles, Typography } from "@material-ui/core";
 import "./Logo.css"

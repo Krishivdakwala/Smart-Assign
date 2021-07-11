@@ -1,3 +1,6 @@
+//This is used for authentication purposes while accessing a particular page
+
+
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext"

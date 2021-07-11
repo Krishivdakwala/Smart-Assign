@@ -1,3 +1,7 @@
+//This displays the pdf and slider component
+
+
+
 import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";

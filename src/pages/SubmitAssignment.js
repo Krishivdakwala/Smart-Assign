@@ -1,3 +1,6 @@
+//SubmitAssignment.js page is for the students to submit their work for a particular assignment
+
+
 import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from "../contexts/AuthContext";
 import { uploadFile, getAssignmentData } from "../api";

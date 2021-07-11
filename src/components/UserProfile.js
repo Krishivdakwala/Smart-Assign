@@ -1,3 +1,5 @@
+//shows username and average marks
+
 import React, { useEffect, useState } from "react";
 import { getStudentData } from "../api";
 import { useAuth } from "../contexts/AuthContext";
