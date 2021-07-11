@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
@@ -20,7 +20,7 @@ export default function DiscreteSlider(props) {
 
   const handleSlide = (event, val) => {
     props.handleSlider(val);
-    console.log(val)
+    console.log(val);
   };
 
   return (
@@ -29,6 +29,7 @@ export default function DiscreteSlider(props) {
         {props.name}
       </Typography>
       <Slider
+        style={{ width: "700px" }}
         onChange={handleSlide}
         defaultValue={30}
         getAriaValueText={valuetext}

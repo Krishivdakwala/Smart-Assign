@@ -33,13 +33,7 @@ export const createUser = ({ UID, name, teacherCheck }) => {
       name: name,
       points: 0,
       teacherCheck: teacherCheck,
-      assignments: [
-        {
-          name: "empty",
-          score: 0,
-          remark: "lul git gud",
-        },
-      ],
+      assignments: [],
       id: UID,
     })
     .then((docRef) => {
