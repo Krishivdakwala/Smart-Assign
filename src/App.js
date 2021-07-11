@@ -6,7 +6,6 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
-import UpdateProfile from "./pages/UpdateProfile";
 import Landing from "./pages/Landing";
 import "./App.css";
 import UserProfile from "./components/UserProfile";
@@ -17,7 +16,7 @@ import CreateAssignmentScreen from "./pages/CreateAssignment";
 import StudentAssignments from "./pages/StudentAssignment";
 import ViewTeacherAssignment from "./pages/ViewTeacherAssignment";
 import SubmitAssignment from "./pages/SubmitAssignment";
-import calendar from './pages/Calendar';
+import calendar from "./pages/Calendar";
 
 function App() {
   return (
@@ -33,13 +32,15 @@ function App() {
                 component={UserProfile}
               />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
 
               {/* studentName = studentEmail */}
-              <Route path="/teacherForm/:studentName/:assignmentName" component={TeacherForm} />
-              
+              <Route
+                path="/teacherForm/:studentName/:assignmentName"
+                component={TeacherForm}
+              />
+
               <Route
                 path="/teacherAssignments"
                 component={TeacherAssignments}
@@ -48,12 +49,20 @@ function App() {
                 path="/createAssignment"
                 component={CreateAssignmentScreen}
               />
-              <Route path="/ViewTeacherAssignment/:assignmentName" component={ViewTeacherAssignment} />
-              <Route path="/studentAssignments" component={StudentAssignments} />
-              <Route path="/submitAssignment/:assignmentName" component={SubmitAssignment} />
+              <Route
+                path="/ViewTeacherAssignment/:assignmentName"
+                component={ViewTeacherAssignment}
+              />
+              <Route
+                path="/studentAssignments"
+                component={StudentAssignments}
+              />
+              <Route
+                path="/submitAssignment/:assignmentName"
+                component={SubmitAssignment}
+              />
               <Route path="/forgot-password" component={ForgotPassword} />
-              <Route path="/calendar" component={calendar}/>
-
+              <Route path="/calendar" component={calendar} />
             </Switch>
           </AuthProvider>
         </div>
