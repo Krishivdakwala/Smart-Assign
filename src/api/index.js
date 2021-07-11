@@ -193,3 +193,25 @@ export const getStudents = async () => {
       console.log("Error getting documents: ", error);
     });
 };
+
+export const getTopPoints = async () => {
+  let arrayStudents = [];
+
+  return firestoreInstance
+    .collection("students")
+    .orderBy("points", "desc")
+    .limit(3)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        //console.log(doc.id, " => ", doc.data());
+        arrayStudents.push(doc.data());
+      });
+      //console.log("arrayAssi: ", arrayAssi);
+      return arrayStudents;
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+};

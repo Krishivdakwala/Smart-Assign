@@ -9,7 +9,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { Navbar, Nav } from "react-bootstrap";
 import IconButton from "@material-ui/core/IconButton";
-import { getStudentData } from "../api";
+import { getStudentData, getTopPoints } from "../api";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
@@ -64,6 +64,7 @@ function LeftDrawer() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [studentData, setStudentData] = useState({});
+  const [topStudents, setTopStudents] = useState([{}, {}, {}]);
 
   const getStudent = () => {
     getStudentData(currentUser.email)
@@ -75,8 +76,20 @@ function LeftDrawer() {
       });
   };
 
+  const getTopStudents = () => {
+    getTopPoints()
+      .then((data) => {
+        console.log("top students: ", data);
+        setTopStudents(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     getStudent();
+    getTopStudents();
   }, []);
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -228,17 +241,23 @@ function LeftDrawer() {
 
             <ListItem>
               <TrophyFill style={{ color: "#ffd700" }} />
-              <ListItemText primary="&ensp;1. Soham" />
+              <ListItemText
+                primary={`  1. ${topStudents[0].name} (${topStudents[0].points})`}
+              />
             </ListItem>
 
             <ListItem>
               <TrophyFill style={{ color: "#c0c0c0" }} />
-              <ListItemText primary="&ensp;2. Sanchit" />
+              <ListItemText
+                primary={`  2. ${topStudents[1].name} (${topStudents[1].points})`}
+              />
             </ListItem>
 
             <ListItem>
               <TrophyFill style={{ color: "#cd7f32" }} />
-              <ListItemText primary="&ensp;3. Vishu" />
+              <ListItemText
+                primary={`  3. ${topStudents[2].name} (${topStudents[2].points})`}
+              />
             </ListItem>
           </List>
         </div>
