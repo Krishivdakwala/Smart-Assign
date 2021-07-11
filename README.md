@@ -14,9 +14,15 @@ SmartAssign is a React-Based Website, which attempts to solve these issues. (Not
 ## Project Componenents
 
 ### Front-End
+The front end of our website is implemented on ReactJS.
 
-
-## Tech-Stack Used
+The libraries used in our project are:
+1. materialUI
+2. React-Bootstrap
+3. React Reveal
+4. React Router
+5. React pdf viewer
+6. Firebase
 
 ## NodeJs
 
@@ -24,7 +30,7 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 
 ## ReactJs
 
-React is a free and open-source front-end JavaScript library for building user interfaces or UI components.The front end of out website is 
+React is a free and open-source front-end JavaScript library for building user interfaces or UI components.
 
 ## Firebase
 
