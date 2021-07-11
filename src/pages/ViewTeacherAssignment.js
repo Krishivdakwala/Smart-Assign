@@ -6,6 +6,7 @@ import { Table, Container } from "react-bootstrap";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core";
 import LeftDrawer from "../components/LeftDrawer";
+import { FastRewind } from "@material-ui/icons";
 
 export default function ViewTeacherAssignment(props) {
   const [assignmentName, setAssignmentName] = useState("");
@@ -23,6 +24,18 @@ export default function ViewTeacherAssignment(props) {
     const assiName = props.match.params.assignmentName;
     setAssignmentName(assiName);
   }, []);
+
+  const doneAssignemnt = ({ asArray, asName }) => {
+    for (var i = 0; i < asArray.length; i++) {
+      console.log("entry: ", asArray[i].name, "asName: ", asName);
+      if (asArray[i].name === asName) {
+        console.log("ret true ", asArray[i].name, " ", asName);
+        return true;
+      }
+    }
+    console.log("ret false");
+    return false;
+  };
 
   return (
     <div>
@@ -49,7 +62,11 @@ export default function ViewTeacherAssignment(props) {
 
           {data.map(
             (Student, i) =>
-              !Student.teacherCheck && (
+              !Student.teacherCheck &&
+              !doneAssignemnt({
+                asArray: Student.assignments,
+                asName: assignmentName,
+              }) && (
                 <tr>
                   <td>{Student.name}</td>
                   <td>Status</td>
