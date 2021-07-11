@@ -110,7 +110,15 @@ function LeftDrawer() {
             <Navbar.Brand href="/dashboard">Luokossa</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="#class">Class</Nav.Link>
-              <Nav.Link href="/teacherAssignments">Assignments</Nav.Link>
+              <Nav.Link
+                href={
+                  studentData.teacherCheck
+                    ? "/teacherAssignments"
+                    : "/studentAssignments"
+                }
+              >
+                Assignments
+              </Nav.Link>
               <Nav.Link href="#notebook">Notebook</Nav.Link>
               <Nav.Link href="#people">People</Nav.Link>
               <Nav.Link href="/calendar">Calendar</Nav.Link>
