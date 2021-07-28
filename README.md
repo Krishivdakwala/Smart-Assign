@@ -1,4 +1,5 @@
 # SmartAssign
+![alt text](https://github.com/Krishivdakwala/CodeCult-Double-Slash-Submission/blob/master/Screenshots/home.png)
 
 ## Description
 
